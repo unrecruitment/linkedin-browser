@@ -4,7 +4,7 @@
 // @grant    none
 // ==/UserScript==
 
-bad_words = ["#Vlčata", "oronavirus"];
+bad_words = ["#Vlčata", "oronavirus", "covid"];
 
 //
 
@@ -15,8 +15,7 @@ if (window.top !== window.self)
 
 MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
-var observer = new MutationObserver(function(mutations, observer) {
-  // Add the actions to be done here if a changes on DOM happened 
+var observer = new MutationObserver((mutations, observer) => {
   console.log(mutations, observer);
   let elements = document.querySelectorAll('[data-id]')
 
